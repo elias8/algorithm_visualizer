@@ -108,11 +108,7 @@ class _NodeWidgetState extends State<NodeWidget>
       end: update.decoration,
     ).animate(_animationController);
     _sizeAnimation = Tween<double>(
-      begin: update.maybeMap(
-        start: (_) => widget.size,
-        target: (_) => widget.size,
-        orElse: () => 0,
-      ),
+      begin: 0,
       end: widget.size,
     ).animate(_animationController);
   }
@@ -129,8 +125,17 @@ class _NodeWidgetState extends State<NodeWidget>
 
   void _updateNode(Node update) {
     _initAnimation(_node, update);
+    final animationStart = _node.maybeMap(
+      start: (_) => 1,
+      target: (_) => 1,
+      orElse: () => update.maybeMap(
+        start: (_) => 1,
+        target: (_) => 1,
+        orElse: () => 0,
+      ),
+    );
     _node = update;
-    _animationController.forward(from: 0);
+    _animationController.forward(from: animationStart.toDouble());
   }
 }
 

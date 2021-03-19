@@ -1,0 +1,27 @@
+include: all_lint_rules.yaml
+analyzer:
+  strong-mode:
+    implicit-casts: true
+    implicit-dynamic: true
+  errors:
+    included_file_warning: ignore
+  exclude:
+    - "**/*.freezed.dart"
+
+linter:
+  rules:
+    always_specify_types: false
+    flutter_style_todos: false
+    prefer_final_locals: true
+    unnecessary_final: false
+    prefer_double_quotes: false
+    one_member_abstracts: false
+    public_member_api_docs: false
+    prefer_relative_imports: false
+    sort_constructors_first: false
+    prefer_asserts_with_message: false
+    prefer_expression_function_bodies: false
+    diagnostic_describe_all_properties: false
+    always_put_control_body_on_new_line: false
+    avoid_positional_boolean_parameters: false
+    always_put_required_named_parameters_first: false

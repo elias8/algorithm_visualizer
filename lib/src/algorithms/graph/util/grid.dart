@@ -21,6 +21,27 @@ extension GridX on List<List<Node>> {
     }
   }
 
+  void clearPathAndVisitedNodes() {
+    forEach((rows) => rows
+        .where((node) => node is VisitedNode || node is PathNode)
+        .map((node) => node.toUnvisitedNode())
+        .forEach(setNode));
+  }
+
+  void clearVisitedNodes() {
+    forEach((rows) => rows
+        .whereType<VisitedNode>()
+        .map((node) => node.toUnvisitedNode())
+        .forEach(setNode));
+  }
+
+  void clearPathNode() {
+    forEach((rows) => rows
+        .whereType<PathNode>()
+        .map((node) => node.toUnvisitedNode())
+        .forEach(setNode));
+  }
+
   Node? getNodeAtPosition(Point<int> position) {
     return isValidPosition(position) ? this[position.x][position.y] : null;
   }

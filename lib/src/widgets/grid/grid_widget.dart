@@ -18,18 +18,18 @@ class GridWidget extends StatelessWidget {
       value: controller,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final gridData = _gridDataFromConstraints(constraints);
-          final nodes = controller.init(gridData.rows, gridData.columns);
+          final data = _gridDataFromConstraints(constraints);
+          final grid = controller.init(data.rows, data.columns);
           return GridGestureDetector(
-            data: gridData,
+            data: data,
             onTap: controller.onTap,
             onMove: controller.onMove,
             child: CustomMultiChildLayout(
-              delegate: GridLayoutDelegate(data: gridData, nodes: nodes),
+              delegate: GridLayoutDelegate(data: data, grid: grid),
               children: [
-                for (var rows in nodes)
+                for (var rows in grid)
                   for (var node in rows)
-                    NodeWidget(node: node, size: gridData.nodeSize)
+                    NodeWidget(node: node, size: data.nodeSize)
               ],
             ),
           );

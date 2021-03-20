@@ -80,8 +80,8 @@ class _NodeWidgetState extends State<NodeWidget>
   @override
   void didUpdateWidget(covariant NodeWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (_node.runtimeType != widget.node.runtimeType) {
-      _updateNode(widget.node);
+    if (_node != widget.node || _node.runtimeType != widget.node.runtimeType) {
+      _updateNode(widget.node, 1);
     }
   }
 
@@ -99,7 +99,7 @@ class _NodeWidgetState extends State<NodeWidget>
     _controller = context.read<GridController>()..addListener(_listener);
     _animationController = AnimationController(vsync: this, duration: duration);
     _initAnimation(_node, _node);
-    _animationController.forward();
+    _animationController.forward(from: 1);
   }
 
   void _initAnimation(Node old, Node update) {
@@ -123,19 +123,20 @@ class _NodeWidgetState extends State<NodeWidget>
     }
   }
 
-  void _updateNode(Node update) {
+  void _updateNode(Node update, [double? animateFrom]) {
     _initAnimation(_node, update);
-    final animationStart = _node.maybeMap(
-      start: (_) => 1,
-      target: (_) => 1,
-      orElse: () => update.maybeMap(
-        start: (_) => 1,
-        target: (_) => 1,
-        orElse: () => 0,
-      ),
-    );
+    final animationStart = animateFrom ??
+        _node.maybeMap(
+          start: (_) => 1.0,
+          target: (_) => 1.0,
+          orElse: () => update.maybeMap(
+            start: (_) => 1.0,
+            target: (_) => 1.0,
+            orElse: () => 0.0,
+          ),
+        );
     _node = update;
-    _animationController.forward(from: animationStart.toDouble());
+    _animationController.forward(from: animationStart);
   }
 }
 
@@ -144,6 +145,8 @@ extension on Node {
     return maybeMap(
       wall: (_) => const BoxDecoration(color: Colors.black),
       unvisited: (_) => const BoxDecoration(color: Colors.grey),
+      visited: (_) => BoxDecoration(color: Colors.grey.shade900),
+      path: (_) => const BoxDecoration(color: Colors.deepOrangeAccent),
       orElse: () => const BoxDecoration(color: Colors.transparent),
     );
   }

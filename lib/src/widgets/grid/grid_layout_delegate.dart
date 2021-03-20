@@ -2,13 +2,13 @@ part of 'grid.dart';
 
 class GridLayoutDelegate extends MultiChildLayoutDelegate {
   final GridData data;
-  final List<List<Node>> nodes;
+  final List<List<Node>> grid;
 
-  GridLayoutDelegate({required this.nodes, required this.data});
+  GridLayoutDelegate({required this.data, required this.grid});
 
   @override
   void performLayout(Size size) {
-    for (final rows in nodes) {
+    for (final rows in grid) {
       for (final node in rows) {
         final nodeSize = data.nodeSize;
         final size = Size(nodeSize, nodeSize);
@@ -25,7 +25,7 @@ class GridLayoutDelegate extends MultiChildLayoutDelegate {
 
   @override
   bool shouldRelayout(covariant GridLayoutDelegate oldDelegate) {
-    final isGridUpdated = nodes.length != oldDelegate.nodes.length;
+    final isGridUpdated = grid.length != oldDelegate.grid.length;
     final isGridDataUpdated = data != oldDelegate.data;
     return isGridUpdated || isGridDataUpdated;
   }

@@ -35,6 +35,13 @@ extension GridX on List<List<Node>> {
         .forEach(setNode));
   }
 
+  void clearWallNodes() {
+    forEach((rows) => rows
+        .whereType<WallNode>()
+        .map((node) => node.toUnvisitedNode())
+        .forEach(setNode));
+  }
+
   void clearPathNode() {
     forEach((rows) => rows
         .whereType<PathNode>()

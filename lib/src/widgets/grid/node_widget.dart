@@ -2,12 +2,12 @@ part of 'grid.dart';
 
 class NodeWidget extends StatefulWidget {
   final Node node;
-  final double size;
+  final NodeStyle style;
 
   const NodeWidget({
     Key? key,
     required this.node,
-    required this.size,
+    required this.style,
   }) : super(key: key);
 
   @override
@@ -30,25 +30,21 @@ class _NodeWidgetItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutId(
       id: node.id,
-      child: Align(
-        child: Container(
-          width: size,
-          height: size,
-          decoration: decoration,
-          alignment: Alignment.center,
-          child: node.maybeMap(
-            start: (_) => Icon(
-              Icons.play_arrow,
-              color: Colors.green,
-              size: size,
-            ),
-            target: (_) => Icon(
-              Icons.adjust_rounded,
-              color: Colors.blue,
-              size: size / 1.4,
-            ),
-            orElse: () => null,
+      child: Container(
+        height: size,
+        decoration: decoration,
+        child: node.maybeMap(
+          start: (_) => Icon(
+            Icons.play_arrow,
+            color: Colors.green,
+            size: size,
           ),
+          target: (_) => Icon(
+            Icons.adjust_rounded,
+            color: Colors.blue,
+            size: size / 1.4,
+          ),
+          orElse: () => null,
         ),
       ),
     );
@@ -80,7 +76,9 @@ class _NodeWidgetState extends State<NodeWidget>
   @override
   void didUpdateWidget(covariant NodeWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (_node != widget.node || _node.runtimeType != widget.node.runtimeType) {
+    if (widget.style != oldWidget.style ||
+        _node != widget.node ||
+        _node.runtimeType != widget.node.runtimeType) {
       _updateNode(widget.node, 1);
     }
   }
@@ -104,12 +102,12 @@ class _NodeWidgetState extends State<NodeWidget>
 
   void _initAnimation(Node old, Node update) {
     _decorationAnimation = DecorationTween(
-      begin: old.decoration,
-      end: update.decoration,
+      begin: old.decoration(widget.style.borderRadius),
+      end: update.decoration(widget.style.borderRadius),
     ).animate(_animationController);
     _sizeAnimation = Tween<double>(
       begin: 0,
-      end: widget.size,
+      end: widget.style.size,
     ).animate(_animationController);
   }
 
@@ -141,13 +139,13 @@ class _NodeWidgetState extends State<NodeWidget>
 }
 
 extension on Node {
-  BoxDecoration get decoration {
+  BoxDecoration decoration(double borderRadius) {
     return maybeMap(
       wall: (_) => const BoxDecoration(color: Colors.black),
       unvisited: (_) => const BoxDecoration(color: Colors.grey),
       visited: (_) => BoxDecoration(color: Colors.grey.shade900),
       path: (_) => const BoxDecoration(color: Colors.deepOrangeAccent),
       orElse: () => const BoxDecoration(color: Colors.transparent),
-    );
+    ).copyWith(borderRadius: BorderRadius.circular(borderRadius));
   }
 }

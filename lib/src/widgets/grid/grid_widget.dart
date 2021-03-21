@@ -1,14 +1,12 @@
 part of 'grid.dart';
 
 class GridWidget extends StatelessWidget {
-  final double nodeSize;
-  final double nodeMargin;
+  final NodeStyle nodeStyle;
   final GridController controller;
 
   const GridWidget({
     Key? key,
-    this.nodeMargin = 0,
-    required this.nodeSize,
+    required this.nodeStyle,
     required this.controller,
   }) : super(key: key);
 
@@ -29,7 +27,7 @@ class GridWidget extends StatelessWidget {
               children: [
                 for (var rows in grid)
                   for (var node in rows)
-                    NodeWidget(node: node, size: data.nodeSize)
+                    NodeWidget(node: node, style: nodeStyle)
               ],
             ),
           );
@@ -41,22 +39,21 @@ class GridWidget extends StatelessWidget {
   int _getMaxNode(double size, double nodeSize) => (size / nodeSize).floor();
 
   GridData _gridDataFromConstraints(BoxConstraints constraints) {
-    final size = nodeSize;
-    final margin = nodeMargin;
+    final margin = nodeStyle.margin;
     final width = constraints.maxWidth;
-    final totalNodeSize = size + margin;
     final height = constraints.maxHeight;
+    final totalNodeSize = nodeStyle.size + margin;
     final rows = _getMaxNode(width, totalNodeSize);
     final columns = _getMaxNode(height, totalNodeSize);
     final hMargin = width - totalNodeSize * rows + margin;
     final vMargin = height - totalNodeSize * columns + margin;
     return GridData(
       rows: rows,
-      nodeSize: size,
       columns: columns,
-      nodeMargin: margin,
       verticalMargin: vMargin,
+      nodeSize: nodeStyle.size,
       horizontalMargin: hMargin,
+      nodeMargin: nodeStyle.margin,
     );
   }
 }

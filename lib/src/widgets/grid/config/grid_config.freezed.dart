@@ -264,3 +264,173 @@ abstract class _GridData implements GridData {
   _$GridDataCopyWith<_GridData> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$NodeStyleTearOff {
+  const _$NodeStyleTearOff();
+
+  _NodeStyle call(
+      {required double size,
+      required double margin,
+      required double borderRadius}) {
+    return _NodeStyle(
+      size: size,
+      margin: margin,
+      borderRadius: borderRadius,
+    );
+  }
+}
+
+/// @nodoc
+const $NodeStyle = _$NodeStyleTearOff();
+
+/// @nodoc
+mixin _$NodeStyle {
+  double get size => throw _privateConstructorUsedError;
+  double get margin => throw _privateConstructorUsedError;
+  double get borderRadius => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NodeStyleCopyWith<NodeStyle> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NodeStyleCopyWith<$Res> {
+  factory $NodeStyleCopyWith(NodeStyle value, $Res Function(NodeStyle) then) =
+      _$NodeStyleCopyWithImpl<$Res>;
+  $Res call({double size, double margin, double borderRadius});
+}
+
+/// @nodoc
+class _$NodeStyleCopyWithImpl<$Res> implements $NodeStyleCopyWith<$Res> {
+  _$NodeStyleCopyWithImpl(this._value, this._then);
+
+  final NodeStyle _value;
+  // ignore: unused_field
+  final $Res Function(NodeStyle) _then;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? margin = freezed,
+    Object? borderRadius = freezed,
+  }) {
+    return _then(_value.copyWith(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as double,
+      margin: margin == freezed
+          ? _value.margin
+          : margin // ignore: cast_nullable_to_non_nullable
+              as double,
+      borderRadius: borderRadius == freezed
+          ? _value.borderRadius
+          : borderRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$NodeStyleCopyWith<$Res> implements $NodeStyleCopyWith<$Res> {
+  factory _$NodeStyleCopyWith(
+          _NodeStyle value, $Res Function(_NodeStyle) then) =
+      __$NodeStyleCopyWithImpl<$Res>;
+  @override
+  $Res call({double size, double margin, double borderRadius});
+}
+
+/// @nodoc
+class __$NodeStyleCopyWithImpl<$Res> extends _$NodeStyleCopyWithImpl<$Res>
+    implements _$NodeStyleCopyWith<$Res> {
+  __$NodeStyleCopyWithImpl(_NodeStyle _value, $Res Function(_NodeStyle) _then)
+      : super(_value, (v) => _then(v as _NodeStyle));
+
+  @override
+  _NodeStyle get _value => super._value as _NodeStyle;
+
+  @override
+  $Res call({
+    Object? size = freezed,
+    Object? margin = freezed,
+    Object? borderRadius = freezed,
+  }) {
+    return _then(_NodeStyle(
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as double,
+      margin: margin == freezed
+          ? _value.margin
+          : margin // ignore: cast_nullable_to_non_nullable
+              as double,
+      borderRadius: borderRadius == freezed
+          ? _value.borderRadius
+          : borderRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_NodeStyle implements _NodeStyle {
+  const _$_NodeStyle(
+      {required this.size, required this.margin, required this.borderRadius});
+
+  @override
+  final double size;
+  @override
+  final double margin;
+  @override
+  final double borderRadius;
+
+  @override
+  String toString() {
+    return 'NodeStyle(size: $size, margin: $margin, borderRadius: $borderRadius)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _NodeStyle &&
+            (identical(other.size, size) ||
+                const DeepCollectionEquality().equals(other.size, size)) &&
+            (identical(other.margin, margin) ||
+                const DeepCollectionEquality().equals(other.margin, margin)) &&
+            (identical(other.borderRadius, borderRadius) ||
+                const DeepCollectionEquality()
+                    .equals(other.borderRadius, borderRadius)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(size) ^
+      const DeepCollectionEquality().hash(margin) ^
+      const DeepCollectionEquality().hash(borderRadius);
+
+  @JsonKey(ignore: true)
+  @override
+  _$NodeStyleCopyWith<_NodeStyle> get copyWith =>
+      __$NodeStyleCopyWithImpl<_NodeStyle>(this, _$identity);
+}
+
+abstract class _NodeStyle implements NodeStyle {
+  const factory _NodeStyle(
+      {required double size,
+      required double margin,
+      required double borderRadius}) = _$_NodeStyle;
+
+  @override
+  double get size => throw _privateConstructorUsedError;
+  @override
+  double get margin => throw _privateConstructorUsedError;
+  @override
+  double get borderRadius => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$NodeStyleCopyWith<_NodeStyle> get copyWith =>
+      throw _privateConstructorUsedError;
+}

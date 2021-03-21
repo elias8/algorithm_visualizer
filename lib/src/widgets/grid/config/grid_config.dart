@@ -13,3 +13,12 @@ abstract class GridData with _$GridData {
     required double horizontalMargin,
   }) = _GridData;
 }
+
+@freezed
+abstract class NodeStyle with _$NodeStyle {
+  const factory NodeStyle({
+    required double size,
+    required double margin,
+    required double borderRadius,
+  }) = _NodeStyle;
+}

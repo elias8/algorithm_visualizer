@@ -7,7 +7,16 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+        sliderTheme: const SliderThemeData(inactiveTrackColor: Colors.white),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            elevation: 8,
+            shape: const StadiumBorder(),
+            primary: Colors.grey.withOpacity(.4),
+          ),
+        ),
+      ),
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );

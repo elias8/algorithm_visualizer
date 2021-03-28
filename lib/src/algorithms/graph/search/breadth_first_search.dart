@@ -6,6 +6,7 @@ Future<void> breadthFirstSearch({
   required OnVisited onVisited,
   required List<List<Node>> grid,
   required OnCompleted onCompleted,
+  bool enableDiagonalSearch = false,
   Duration? visitDelay = Duration.zero,
 }) async {
   final paths = <Node, Node>{}..addAll({start: start});
@@ -24,7 +25,7 @@ Future<void> breadthFirstSearch({
       grid.setNode(visited);
     }
     if (visitDelay != null) await Future.delayed(visitDelay);
-    final neighbours = grid.getNeighboursOf(current);
+    final neighbours = grid.getNeighboursOf(current, enableDiagonalSearch);
     final unvisitedNoes =
         getUnvisitedNodes(neighbours).where((n) => !queue.contains(n));
     paths.addEntries(unvisitedNoes.map((e) => MapEntry(e, current)));

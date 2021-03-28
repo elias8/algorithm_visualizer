@@ -51,6 +51,22 @@ extension NodeExtension on Node {
   UnvisitedNode toUnvisitedNode() => UnvisitedNode(id: id, position: position);
 }
 
-extension PointX<T extends num> on Point<T> {
+extension PointX on Point<int> {
   String get id => '$x-$y';
+
+  Point<int> get left => Point(x - 1, y);
+
+  Point<int> get right => Point(x + 1, y);
+
+  Point<int> get top => Point(x, y - 1);
+
+  Point<int> get bottom => Point(x, y + 1);
+
+  Point<int> get topLeft => Point(x - 1, y - 1);
+
+  Point<int> get topRight => Point(x + 1, y - 1);
+
+  Point<int> get bottomRight => Point(x + 1, y + 1);
+
+  Point<int> get bottomLeft => Point(x - 1, y + 1);
 }

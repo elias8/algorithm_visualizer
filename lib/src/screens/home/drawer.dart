@@ -5,37 +5,47 @@ class _AlgorithmSelectorDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[700],
-        borderRadius: BorderRadius.circular(8),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: DropdownButton<Algorithm>(
-        isExpanded: true,
-        hint: const Text('Algorithms'),
-        underline: const SizedBox(),
-        items: GraphAlgorithmChangeNotifier.algorithms
-            .map(
-              (e) => DropdownMenuItem(
-                value: e,
-                child: Text(
-                  e.when(
-                    bfs: () => 'Breadth-First Search',
-                    dfs: () => 'Depth-First Search',
-                    dijkstra: () => 'Dijkstra',
-                    aStart: () => 'A* Search',
-                    swarm: () => 'Swarm',
-                  ),
-                ),
-              ),
-            )
-            .toList(),
-        value: context.select<GraphAlgorithmChangeNotifier, Algorithm>(
-            (value) => value.algorithm),
-        onChanged: (value) =>
-            context.read<GraphAlgorithmChangeNotifier>().setAlgorithm(value!),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[700],
+              borderRadius: BorderRadius.circular(8),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: DropdownButton<Algorithm>(
+              isExpanded: true,
+              hint: const Text('Algorithms'),
+              underline: const SizedBox(),
+              items: GraphAlgorithmChangeNotifier.algorithms
+                  .map(
+                    (e) => DropdownMenuItem(
+                      value: e,
+                      child: Text(
+                        e.when(
+                          bfs: () => 'Breadth-First Search',
+                          dfs: () => 'Depth-First Search',
+                          dijkstra: () => 'Dijkstra',
+                          aStart: () => 'A* Search',
+                          swarm: () => 'Swarm',
+                        ),
+                      ),
+                    ),
+                  )
+                  .toList(),
+              value: context.select<GraphAlgorithmChangeNotifier, Algorithm>(
+                  (value) => value.algorithm),
+              onChanged: (value) => context
+                  .read<GraphAlgorithmChangeNotifier>()
+                  .setAlgorithm(value!),
+            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        const _DiagonalSearchOption(),
+      ],
     );
   }
 }
@@ -230,6 +240,26 @@ class _SliderWithTitle extends StatelessWidget {
           Expanded(child: child),
         ],
       ),
+    );
+  }
+}
+
+class _DiagonalSearchOption extends StatelessWidget {
+  const _DiagonalSearchOption({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const SizedBox(width: 8),
+        const Text('Enable Diagonal Search'),
+        Switch(
+          value: context.select<GraphAlgorithmChangeNotifier, bool>(
+              (value) => value.isDiagonalSearchEnabled),
+          onChanged:
+              context.read<GraphAlgorithmChangeNotifier>().changeDiagonalSearch,
+        ),
+      ],
     );
   }
 }

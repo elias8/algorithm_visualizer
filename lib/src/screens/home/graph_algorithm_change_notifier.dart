@@ -20,6 +20,7 @@ class GraphAlgorithmChangeNotifier extends GridController {
   List<List<Node>> _grid = [];
   Node? _startNodePlaceHolder;
   Node? _targetNodePlaceHolder;
+  bool _isDiagonalSearchEnabled = false;
   Algorithm _algorithm = algorithms.first;
   NodeStyle _nodeStyle = _defaultNodeStyle;
 
@@ -28,7 +29,16 @@ class GraphAlgorithmChangeNotifier extends GridController {
   @override
   List<List<Node>> get grid => _grid;
 
+  bool get isDiagonalSearchEnabled => _isDiagonalSearchEnabled;
+
   NodeStyle get nodeStyle => _nodeStyle;
+
+  void changeDiagonalSearch(bool? enable) {
+    if (!_isVisualizing) {
+      _isDiagonalSearchEnabled = enable ?? !_isDiagonalSearchEnabled;
+      notifyListeners();
+    }
+  }
 
   void clearWalls() {
     if (!_isVisualizing) {
@@ -200,6 +210,7 @@ class GraphAlgorithmChangeNotifier extends GridController {
       target: _targetNode,
       onVisited: _onNodeVisited,
       onCompleted: _onSearchCompleted,
+      enableDiagonalSearch: _isDiagonalSearchEnabled,
       // visitDelay: const Duration(milliseconds: 10),
     );
   }

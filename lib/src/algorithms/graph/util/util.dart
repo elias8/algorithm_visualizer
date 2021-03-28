@@ -30,6 +30,7 @@ typedef OnVisited = void Function(VisitedNode node);
 typedef SearchAlgorithm = Future<void> Function({
   Duration? visitDelay,
   required StartNode start,
+  bool enableDiagonalSearch,
   required TargetNode target,
   required OnVisited onVisited,
   required List<List<Node>> grid,

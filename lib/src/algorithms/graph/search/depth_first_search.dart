@@ -6,6 +6,7 @@ Future<void> depthFirstSearch({
   required OnVisited onVisited,
   required List<List<Node>> grid,
   required OnCompleted onCompleted,
+  bool enableDiagonalSearch = false,
   Duration? visitDelay = Duration.zero,
 }) async {
   final paths = <Node, Node>{}..addAll({start: start});

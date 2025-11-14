@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'node.dart';
 
@@ -10,63 +12,12 @@ part of 'node.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NodeTearOff {
-  const _$NodeTearOff();
-
-  PathNode path({required String id, required Point<int> position}) {
-    return PathNode(
-      id: id,
-      position: position,
-    );
-  }
-
-  StartNode start({required String id, required Point<int> position}) {
-    return StartNode(
-      id: id,
-      position: position,
-    );
-  }
-
-  TargetNode target({required String id, required Point<int> position}) {
-    return TargetNode(
-      id: id,
-      position: position,
-    );
-  }
-
-  UnvisitedNode unvisited({required String id, required Point<int> position}) {
-    return UnvisitedNode(
-      id: id,
-      position: position,
-    );
-  }
-
-  VisitedNode visited({required String id, required Point<int> position}) {
-    return VisitedNode(
-      id: id,
-      position: position,
-    );
-  }
-
-  WallNode wall({required String id, required Point<int> position}) {
-    return WallNode(
-      id: id,
-      position: position,
-    );
-  }
-}
-
-/// @nodoc
-const $Node = _$NodeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Node {
   String get id => throw _privateConstructorUsedError;
   Point<int> get position => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, Point<int> position) path,
@@ -75,6 +26,16 @@ mixin _$Node {
     required TResult Function(String id, Point<int> position) unvisited,
     required TResult Function(String id, Point<int> position) visited,
     required TResult Function(String id, Point<int> position) wall,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +60,16 @@ mixin _$Node {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -110,71 +81,83 @@ mixin _$Node {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NodeCopyWith<Node> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NodeCopyWith<$Res> {
   factory $NodeCopyWith(Node value, $Res Function(Node) then) =
-      _$NodeCopyWithImpl<$Res>;
+      _$NodeCopyWithImpl<$Res, Node>;
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$NodeCopyWithImpl<$Res> implements $NodeCopyWith<$Res> {
+class _$NodeCopyWithImpl<$Res, $Val extends Node>
+    implements $NodeCopyWith<$Res> {
   _$NodeCopyWithImpl(this._value, this._then);
 
-  final Node _value;
   // ignore: unused_field
-  final $Res Function(Node) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $PathNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $PathNodeCopyWith(PathNode value, $Res Function(PathNode) then) =
-      _$PathNodeCopyWithImpl<$Res>;
+abstract class _$$PathNodeImplCopyWith<$Res> implements $NodeCopyWith<$Res> {
+  factory _$$PathNodeImplCopyWith(
+          _$PathNodeImpl value, $Res Function(_$PathNodeImpl) then) =
+      __$$PathNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$PathNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $PathNodeCopyWith<$Res> {
-  _$PathNodeCopyWithImpl(PathNode _value, $Res Function(PathNode) _then)
-      : super(_value, (v) => _then(v as PathNode));
+class __$$PathNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$PathNodeImpl>
+    implements _$$PathNodeImplCopyWith<$Res> {
+  __$$PathNodeImplCopyWithImpl(
+      _$PathNodeImpl _value, $Res Function(_$PathNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  PathNode get _value => super._value as PathNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(PathNode(
-      id: id == freezed
+    return _then(_$PathNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -183,8 +166,9 @@ class _$PathNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$PathNode implements PathNode {
-  const _$PathNode({required this.id, required this.position});
+
+class _$PathNodeImpl implements PathNode {
+  const _$PathNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -197,26 +181,25 @@ class _$PathNode implements PathNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is PathNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$PathNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $PathNodeCopyWith<PathNode> get copyWith =>
-      _$PathNodeCopyWithImpl<PathNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PathNodeImplCopyWith<_$PathNodeImpl> get copyWith =>
+      __$$PathNodeImplCopyWithImpl<_$PathNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -229,6 +212,19 @@ class _$PathNode implements PathNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return path(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return path?.call(id, position);
   }
 
   @override
@@ -263,6 +259,19 @@ class _$PathNode implements PathNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return path?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -280,47 +289,55 @@ class _$PathNode implements PathNode {
 }
 
 abstract class PathNode implements Node {
-  const factory PathNode({required String id, required Point<int> position}) =
-      _$PathNode;
+  const factory PathNode(
+      {required final String id,
+      required final Point<int> position}) = _$PathNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $PathNodeCopyWith<PathNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PathNodeImplCopyWith<_$PathNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StartNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $StartNodeCopyWith(StartNode value, $Res Function(StartNode) then) =
-      _$StartNodeCopyWithImpl<$Res>;
+abstract class _$$StartNodeImplCopyWith<$Res> implements $NodeCopyWith<$Res> {
+  factory _$$StartNodeImplCopyWith(
+          _$StartNodeImpl value, $Res Function(_$StartNodeImpl) then) =
+      __$$StartNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$StartNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $StartNodeCopyWith<$Res> {
-  _$StartNodeCopyWithImpl(StartNode _value, $Res Function(StartNode) _then)
-      : super(_value, (v) => _then(v as StartNode));
+class __$$StartNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$StartNodeImpl>
+    implements _$$StartNodeImplCopyWith<$Res> {
+  __$$StartNodeImplCopyWithImpl(
+      _$StartNodeImpl _value, $Res Function(_$StartNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  StartNode get _value => super._value as StartNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(StartNode(
-      id: id == freezed
+    return _then(_$StartNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -329,8 +346,9 @@ class _$StartNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$StartNode implements StartNode {
-  const _$StartNode({required this.id, required this.position});
+
+class _$StartNodeImpl implements StartNode {
+  const _$StartNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -343,26 +361,25 @@ class _$StartNode implements StartNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is StartNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$StartNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $StartNodeCopyWith<StartNode> get copyWith =>
-      _$StartNodeCopyWithImpl<StartNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$StartNodeImplCopyWith<_$StartNodeImpl> get copyWith =>
+      __$$StartNodeImplCopyWithImpl<_$StartNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -375,6 +392,19 @@ class _$StartNode implements StartNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return start(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return start?.call(id, position);
   }
 
   @override
@@ -409,6 +439,19 @@ class _$StartNode implements StartNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -426,48 +469,55 @@ class _$StartNode implements StartNode {
 }
 
 abstract class StartNode implements Node {
-  const factory StartNode({required String id, required Point<int> position}) =
-      _$StartNode;
+  const factory StartNode(
+      {required final String id,
+      required final Point<int> position}) = _$StartNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $StartNodeCopyWith<StartNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StartNodeImplCopyWith<_$StartNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TargetNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $TargetNodeCopyWith(
-          TargetNode value, $Res Function(TargetNode) then) =
-      _$TargetNodeCopyWithImpl<$Res>;
+abstract class _$$TargetNodeImplCopyWith<$Res> implements $NodeCopyWith<$Res> {
+  factory _$$TargetNodeImplCopyWith(
+          _$TargetNodeImpl value, $Res Function(_$TargetNodeImpl) then) =
+      __$$TargetNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$TargetNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $TargetNodeCopyWith<$Res> {
-  _$TargetNodeCopyWithImpl(TargetNode _value, $Res Function(TargetNode) _then)
-      : super(_value, (v) => _then(v as TargetNode));
+class __$$TargetNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$TargetNodeImpl>
+    implements _$$TargetNodeImplCopyWith<$Res> {
+  __$$TargetNodeImplCopyWithImpl(
+      _$TargetNodeImpl _value, $Res Function(_$TargetNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  TargetNode get _value => super._value as TargetNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(TargetNode(
-      id: id == freezed
+    return _then(_$TargetNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -476,8 +526,9 @@ class _$TargetNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$TargetNode implements TargetNode {
-  const _$TargetNode({required this.id, required this.position});
+
+class _$TargetNodeImpl implements TargetNode {
+  const _$TargetNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -490,26 +541,25 @@ class _$TargetNode implements TargetNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is TargetNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$TargetNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $TargetNodeCopyWith<TargetNode> get copyWith =>
-      _$TargetNodeCopyWithImpl<TargetNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$TargetNodeImplCopyWith<_$TargetNodeImpl> get copyWith =>
+      __$$TargetNodeImplCopyWithImpl<_$TargetNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -522,6 +572,19 @@ class _$TargetNode implements TargetNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return target(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return target?.call(id, position);
   }
 
   @override
@@ -556,6 +619,19 @@ class _$TargetNode implements TargetNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return target?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -573,49 +649,56 @@ class _$TargetNode implements TargetNode {
 }
 
 abstract class TargetNode implements Node {
-  const factory TargetNode({required String id, required Point<int> position}) =
-      _$TargetNode;
+  const factory TargetNode(
+      {required final String id,
+      required final Point<int> position}) = _$TargetNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $TargetNodeCopyWith<TargetNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TargetNodeImplCopyWith<_$TargetNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UnvisitedNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $UnvisitedNodeCopyWith(
-          UnvisitedNode value, $Res Function(UnvisitedNode) then) =
-      _$UnvisitedNodeCopyWithImpl<$Res>;
+abstract class _$$UnvisitedNodeImplCopyWith<$Res>
+    implements $NodeCopyWith<$Res> {
+  factory _$$UnvisitedNodeImplCopyWith(
+          _$UnvisitedNodeImpl value, $Res Function(_$UnvisitedNodeImpl) then) =
+      __$$UnvisitedNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$UnvisitedNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $UnvisitedNodeCopyWith<$Res> {
-  _$UnvisitedNodeCopyWithImpl(
-      UnvisitedNode _value, $Res Function(UnvisitedNode) _then)
-      : super(_value, (v) => _then(v as UnvisitedNode));
+class __$$UnvisitedNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$UnvisitedNodeImpl>
+    implements _$$UnvisitedNodeImplCopyWith<$Res> {
+  __$$UnvisitedNodeImplCopyWithImpl(
+      _$UnvisitedNodeImpl _value, $Res Function(_$UnvisitedNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  UnvisitedNode get _value => super._value as UnvisitedNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(UnvisitedNode(
-      id: id == freezed
+    return _then(_$UnvisitedNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -624,8 +707,9 @@ class _$UnvisitedNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$UnvisitedNode implements UnvisitedNode {
-  const _$UnvisitedNode({required this.id, required this.position});
+
+class _$UnvisitedNodeImpl implements UnvisitedNode {
+  const _$UnvisitedNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -638,26 +722,25 @@ class _$UnvisitedNode implements UnvisitedNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is UnvisitedNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$UnvisitedNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $UnvisitedNodeCopyWith<UnvisitedNode> get copyWith =>
-      _$UnvisitedNodeCopyWithImpl<UnvisitedNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnvisitedNodeImplCopyWith<_$UnvisitedNodeImpl> get copyWith =>
+      __$$UnvisitedNodeImplCopyWithImpl<_$UnvisitedNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -670,6 +753,19 @@ class _$UnvisitedNode implements UnvisitedNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return unvisited(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return unvisited?.call(id, position);
   }
 
   @override
@@ -704,6 +800,19 @@ class _$UnvisitedNode implements UnvisitedNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return unvisited?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -722,48 +831,54 @@ class _$UnvisitedNode implements UnvisitedNode {
 
 abstract class UnvisitedNode implements Node {
   const factory UnvisitedNode(
-      {required String id, required Point<int> position}) = _$UnvisitedNode;
+      {required final String id,
+      required final Point<int> position}) = _$UnvisitedNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $UnvisitedNodeCopyWith<UnvisitedNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnvisitedNodeImplCopyWith<_$UnvisitedNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VisitedNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $VisitedNodeCopyWith(
-          VisitedNode value, $Res Function(VisitedNode) then) =
-      _$VisitedNodeCopyWithImpl<$Res>;
+abstract class _$$VisitedNodeImplCopyWith<$Res> implements $NodeCopyWith<$Res> {
+  factory _$$VisitedNodeImplCopyWith(
+          _$VisitedNodeImpl value, $Res Function(_$VisitedNodeImpl) then) =
+      __$$VisitedNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$VisitedNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $VisitedNodeCopyWith<$Res> {
-  _$VisitedNodeCopyWithImpl(
-      VisitedNode _value, $Res Function(VisitedNode) _then)
-      : super(_value, (v) => _then(v as VisitedNode));
+class __$$VisitedNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$VisitedNodeImpl>
+    implements _$$VisitedNodeImplCopyWith<$Res> {
+  __$$VisitedNodeImplCopyWithImpl(
+      _$VisitedNodeImpl _value, $Res Function(_$VisitedNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  VisitedNode get _value => super._value as VisitedNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(VisitedNode(
-      id: id == freezed
+    return _then(_$VisitedNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -772,8 +887,9 @@ class _$VisitedNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$VisitedNode implements VisitedNode {
-  const _$VisitedNode({required this.id, required this.position});
+
+class _$VisitedNodeImpl implements VisitedNode {
+  const _$VisitedNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -786,26 +902,25 @@ class _$VisitedNode implements VisitedNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is VisitedNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$VisitedNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $VisitedNodeCopyWith<VisitedNode> get copyWith =>
-      _$VisitedNodeCopyWithImpl<VisitedNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$VisitedNodeImplCopyWith<_$VisitedNodeImpl> get copyWith =>
+      __$$VisitedNodeImplCopyWithImpl<_$VisitedNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -818,6 +933,19 @@ class _$VisitedNode implements VisitedNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return visited(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return visited?.call(id, position);
   }
 
   @override
@@ -852,6 +980,19 @@ class _$VisitedNode implements VisitedNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return visited?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -870,46 +1011,54 @@ class _$VisitedNode implements VisitedNode {
 
 abstract class VisitedNode implements Node {
   const factory VisitedNode(
-      {required String id, required Point<int> position}) = _$VisitedNode;
+      {required final String id,
+      required final Point<int> position}) = _$VisitedNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $VisitedNodeCopyWith<VisitedNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VisitedNodeImplCopyWith<_$VisitedNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WallNodeCopyWith<$Res> implements $NodeCopyWith<$Res> {
-  factory $WallNodeCopyWith(WallNode value, $Res Function(WallNode) then) =
-      _$WallNodeCopyWithImpl<$Res>;
+abstract class _$$WallNodeImplCopyWith<$Res> implements $NodeCopyWith<$Res> {
+  factory _$$WallNodeImplCopyWith(
+          _$WallNodeImpl value, $Res Function(_$WallNodeImpl) then) =
+      __$$WallNodeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, Point<int> position});
 }
 
 /// @nodoc
-class _$WallNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
-    implements $WallNodeCopyWith<$Res> {
-  _$WallNodeCopyWithImpl(WallNode _value, $Res Function(WallNode) _then)
-      : super(_value, (v) => _then(v as WallNode));
+class __$$WallNodeImplCopyWithImpl<$Res>
+    extends _$NodeCopyWithImpl<$Res, _$WallNodeImpl>
+    implements _$$WallNodeImplCopyWith<$Res> {
+  __$$WallNodeImplCopyWithImpl(
+      _$WallNodeImpl _value, $Res Function(_$WallNodeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  WallNode get _value => super._value as WallNode;
-
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(WallNode(
-      id: id == freezed
+    return _then(_$WallNodeImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Point<int>,
@@ -918,8 +1067,9 @@ class _$WallNodeCopyWithImpl<$Res> extends _$NodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$WallNode implements WallNode {
-  const _$WallNode({required this.id, required this.position});
+
+class _$WallNodeImpl implements WallNode {
+  const _$WallNodeImpl({required this.id, required this.position});
 
   @override
   final String id;
@@ -932,26 +1082,25 @@ class _$WallNode implements WallNode {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is WallNode &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$WallNodeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, position);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  $WallNodeCopyWith<WallNode> get copyWith =>
-      _$WallNodeCopyWithImpl<WallNode>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$WallNodeImplCopyWith<_$WallNodeImpl> get copyWith =>
+      __$$WallNodeImplCopyWithImpl<_$WallNodeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -964,6 +1113,19 @@ class _$WallNode implements WallNode {
     required TResult Function(String id, Point<int> position) wall,
   }) {
     return wall(id, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String id, Point<int> position)? path,
+    TResult? Function(String id, Point<int> position)? start,
+    TResult? Function(String id, Point<int> position)? target,
+    TResult? Function(String id, Point<int> position)? unvisited,
+    TResult? Function(String id, Point<int> position)? visited,
+    TResult? Function(String id, Point<int> position)? wall,
+  }) {
+    return wall?.call(id, position);
   }
 
   @override
@@ -998,6 +1160,19 @@ class _$WallNode implements WallNode {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(PathNode value)? path,
+    TResult? Function(StartNode value)? start,
+    TResult? Function(TargetNode value)? target,
+    TResult? Function(UnvisitedNode value)? unvisited,
+    TResult? Function(VisitedNode value)? visited,
+    TResult? Function(WallNode value)? wall,
+  }) {
+    return wall?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(PathNode value)? path,
     TResult Function(StartNode value)? start,
@@ -1015,15 +1190,19 @@ class _$WallNode implements WallNode {
 }
 
 abstract class WallNode implements Node {
-  const factory WallNode({required String id, required Point<int> position}) =
-      _$WallNode;
+  const factory WallNode(
+      {required final String id,
+      required final Point<int> position}) = _$WallNodeImpl;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Point<int> get position => throw _privateConstructorUsedError;
+  Point<int> get position;
+
+  /// Create a copy of Node
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  $WallNodeCopyWith<WallNode> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$WallNodeImplCopyWith<_$WallNodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

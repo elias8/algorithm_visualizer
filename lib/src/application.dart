@@ -13,7 +13,7 @@ class Application extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             elevation: 8,
             shape: const StadiumBorder(),
-            primary: Colors.grey.withOpacity(.4),
+            backgroundColor: Colors.grey.withValues(alpha: 0.4),
           ),
         ),
       ),
